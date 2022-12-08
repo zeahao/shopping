@@ -73,8 +73,8 @@
   const store = useStore();
   const router = useRouter();
   const user = reactive({
-    phone:'',
-    password:'',
+    phone:'123',
+    password:'123',
   })
 
   const login = async ()=>{
