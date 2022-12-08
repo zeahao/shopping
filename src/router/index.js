@@ -8,7 +8,9 @@ const routes = [
         path: '/home',
         component: () => import('@/pages/Home'),
         meta: {
-            show: true
+            show: true,
+            // 未登录状态是否可以访问
+            noLoginTo:true
         },
         children: [
             {
@@ -38,7 +40,8 @@ const routes = [
         path: '/search/:keyword?',
         component: () => import("@/pages/Search"),
         meta: {
-            show: true
+            show: true,
+            noLoginTo:true
         }
     },
     {
@@ -46,7 +49,8 @@ const routes = [
         path: '/login',
         component: () => import("@/pages/Login"),
         meta: {
-            show: false
+            show: false,
+            noLoginTo:true
         }
     },
     {
@@ -54,7 +58,8 @@ const routes = [
         path: '/register',
         component: () => import("@/pages/Register"),
         meta: {
-            show: false
+            show: false,
+            noLoginTo:true
         }
     },
     {
@@ -192,7 +197,7 @@ router.beforeEach(async (to, from, next) => {
             }
         }
     } else {
-        if (to.name === 'login' || to.name === 'home' || to.name === 'register') {
+        if (to.meta.noLoginTo) {
             next();
         } else {
             next('/login');

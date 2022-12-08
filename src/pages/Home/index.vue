@@ -17,8 +17,10 @@ import Floor from "./Floor";
 import Brand from "./Brand";
 import {useStore} from "vuex";
 import {computed, onMounted} from "vue";
+import {useRoute} from "vue-router";
 
 const store = useStore();
+const route = useRoute()
 
 const floors = computed(() => {
   return store.state.home.floors;
