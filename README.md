@@ -1,6 +1,6 @@
 # shopping-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+这是一个vue3+vite的线上商城项目
 
 ## Recommended IDE Setup
 
